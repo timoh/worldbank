@@ -1,0 +1,2 @@
+module DeathrateHelper
+end

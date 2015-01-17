@@ -1,0 +1,49 @@
+<h1>Home</h1>
+
+<p>Death Rate line count: <%= @deathrate_count %></p>
+
+<%= button_to "Ingest death rates", 
+              { :controller => :home, :action=> :deathrateingest }, 
+              { :remote => true, :method => :get } 
+ %>
+
+ <p>Birth Rate line count: <%= @birthrate_count %></p>
+
+<%= button_to "Ingest birth rates", 
+              { :controller => :home, :action=> :birthrateingest }, 
+              { :remote => true, :method => :get } 
+ %>
+
+
+ <p>GDP per capita line count: <%= @gdp_count %></p>
+
+<%= button_to "Ingest GDP's", 
+              { :controller => :home, :action=> :gdpingest }, 
+              { :remote => true, :method => :get } 
+ %>
+
+<h1>View endpoints</h1>
+
+  <h2>Death Rate</h2>
+
+    <p><%= link_to 'Show raw JSON', 'deathrate' %></p>
+    <p><%= link_to 'List Countries', 'deathrate/countries' %></p>
+    <p><%= link_to 'List Dates', 'deathrate/dates' %></p>
+    <p><%= link_to 'List Values', 'deathrate/values' %></p>
+    <p><%= link_to 'Count fields', 'deathrate/count_fields' %></p>
+
+  <h2>Birth Rate</h2>
+
+    <p><%= link_to 'Show raw JSON', 'birthrate' %></p>
+    <p><%= link_to 'List Countries', 'birthrate/countries' %></p>
+    <p><%= link_to 'List Dates', 'birthrate/dates' %></p>
+    <p><%= link_to 'List Values', 'birthrate/values' %></p>
+    <p><%= link_to 'Count fields', 'birthrate/count_fields' %></p>
+
+  <h2>GDP per capita</h2>
+
+    <p><%= link_to 'Show raw JSON', 'gdp' %></p>
+    <p><%= link_to 'List Countries', 'gdp/countries' %></p>
+    <p><%= link_to 'List Dates', 'gdp/dates' %></p>
+    <p><%= link_to 'List Values', 'gdp/values' %></p>
+    <p><%= link_to 'Count fields', 'gdp/count_fields' %></p>
