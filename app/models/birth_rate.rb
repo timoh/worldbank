@@ -22,8 +22,6 @@ class BirthRate
 
     filtered_countries = all_countries - droplist
 
-    puts filtered_countries.to_s
-
     filtered_countries.each do |country|
       country_results = self.all.where(:country => country)
 
