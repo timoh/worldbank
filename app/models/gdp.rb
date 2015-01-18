@@ -32,6 +32,28 @@ class Gdp
     response
   end
 
+  def self.all_without_noncountries_limited(limit)
+    raise 'Limit is not a number!' unless limit.is_a? Numeric
+    response = []
+    all_countries = self.distinct(:country).to_a
+    droplist = Rails.application.config.droplist
+
+    filtered_countries = all_countries - droplist
+
+    filtered_countries.each do |country|
+      country_results = self.all.where(:country => country)
+
+      country_results.each do |result|
+        response << result
+        break if response.size >= limit
+      end
+
+      break if response.size >= limit
+    end
+
+    response
+  end
+
   def self.ingest_from_api
     require 'net/http'
     require 'oj'

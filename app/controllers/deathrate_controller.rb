@@ -1,6 +1,11 @@
 class DeathrateController < ApplicationController
   def index
-    render json: DeathRate.all_without_noncountries.collect {|o| {:country => o.country, :date => o.date, :death_rate => o.value} }
+    if params[:limit].to_i >= 1
+      limit = params[:limit].to_i
+      render json: DeathRate.all_without_noncountries_limited(limit).collect {|o| {:country => o.country, :date => o.date, :death_rate => o.value} }
+    else
+      render json: DeathRate.all_without_noncountries.collect {|o| {:country => o.country, :date => o.date, :death_rate => o.value} }
+    end
   end
 
   def list_countries
