@@ -61,7 +61,7 @@ class Gdp
     # setup parameters for GET request
 
     format = "json";
-    per_page = 10000;
+    per_page = 50000;
     date_range = "1990:2010";
 
     # execute GET request
