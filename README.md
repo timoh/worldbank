@@ -5,6 +5,8 @@ This application is meant to act as a cache and reformatting layer between the W
 
 This app has been deployed to http://worldbank.herokuapp.com/
 
+You can *limit* the API responses for the three main API's with the GET parameter "limit"
+
 The three API's supported for the current purpose of the project are
 
 * Death Rate (http://data.worldbank.org/indicator/SP.DYN.CDRT.IN)
