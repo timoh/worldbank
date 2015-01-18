@@ -61,9 +61,9 @@ class BirthRate
 
     # setup parameters for GET request
 
-    format = "json";
-    per_page = 50000;
-    date_range = "1990:2010";
+    format = Rails.application.config.wb_api_format;
+    per_page = Rails.application.config.wb_api_max_per_page;
+    date_range = Rails.application.config.wb_api_date_range;
 
     # execute GET request
 
